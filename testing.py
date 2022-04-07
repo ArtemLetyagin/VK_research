@@ -13,7 +13,7 @@ import collections
 
 model = torch.load('model_50.pth', map_location=torch.device('cpu'))
 
-x_test = np.load('ret.npy')
+x_test = np.load('ret.npy') #load test data
 
 pred = model(torch.tensor(x_test).view(-1,1,48000).float())
 
