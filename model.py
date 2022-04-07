@@ -197,16 +197,24 @@ class AdMSoftmaxLoss(nn.Module):
         L = numerator - torch.log(denominator)
         return -torch.mean(L)
         
-#training loop
+#loss function and optimizer
 criterion = AdMSoftmaxLoss(50, 118, s=30.0, m=0.35)
 optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 
+#data
+x = np.load('x5000.npy)
+y = np.load('y5000.npy)  
+x, y = utils.shuffle(x, y)
+x_tensor = torch.tensor(x).view(5001, 1, -1)
+y_tensor = torch.tensor(y).long()
+          
+#training loop
 num_epochs=100
 batch_size = 50
-num_of_batches = int(x.shape[0]/batch_size)
+num_batches = int(x.shape[0]/batch_size)
 for epoch in range(num_epochs):
     print(f'epoch: {epoch}')
-    for i in range(100):
+    for i in range(num_batches):
         x_ = x_tensor[i*batch_size:(i+1)*batch_size]
         y_ = y_tensor[i*batch_size:(i+1)*batch_size]
         pred = model(x_)
