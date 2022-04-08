@@ -47,6 +47,6 @@
 
 Пример работы библиотеки noisereduce с моими данными:
 
-![Косинусное расстояние](noise_audio.jpg) ![Косинусное расстояние](reduced_noise_audio.jpg)
+![](noise_audio.jpg) ![](reduced_noise_audio.jpg)
 
 
