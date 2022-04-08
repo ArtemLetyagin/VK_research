@@ -47,6 +47,6 @@
 
 Пример работы библиотеки noisereduce с моими данными:
 
-![](noise_audio.jpg) ![](reduced_noise_audio.jpg)
+![ ](noise_audio.jpg) ![ ](reduced_noise_audio.jpg)
 
 
