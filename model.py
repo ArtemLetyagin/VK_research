@@ -222,7 +222,7 @@ for epoch in range(num_epochs):
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        if(i%50==0):
-            print(f'step: {i}/{num_of_batches}, loss: {loss}')
+    if(epoch%10==0):
+        print(f'step: {epoch+1}/{num_epochs}, loss: {loss}')
             
 torch.save(model, 'model_50.pth')            
